@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://darrbmq2lo5ut"]
+
+[ext_resource type="Script" path="res://Inventory/Item.gd" id="1_8kvh3"]
+[ext_resource type="Texture2D" uid="uid://cdtip4m3kj23k" path="res://Images/Sea_Bass_NH_Icon.png" id="2_sqnyh"]
+
+[resource]
+script = ExtResource("1_8kvh3")
+name = "Fish"
+stackable = true
+max_stack_size = 5
+texture = ExtResource("2_sqnyh")
+type = 1
+modifier = 1
+power = Array[int]([5, 1])

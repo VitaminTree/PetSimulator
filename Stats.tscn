@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://ovj1us8c77e2"]
+
+[ext_resource type="Script" path="res://Stats.gd" id="1_5slqj"]
+[ext_resource type="LabelSettings" uid="uid://cc056pssvo0od" path="res://Themes/FontLesser.tres" id="1_7bjab"]
+[ext_resource type="LabelSettings" uid="uid://brk3b518ew3w8" path="res://Themes/Font.tres" id="2_gr1le"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_5slqj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 368.0
+offset_bottom = 272.0
+theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Name: "
+label_settings = ExtResource("1_7bjab")
+horizontal_alignment = 2
+
+[node name="NameOutput" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Default Name"
+label_settings = ExtResource("2_gr1le")
+
+[node name="Species" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Species: "
+label_settings = ExtResource("1_7bjab")
+horizontal_alignment = 2
+
+[node name="SpeciesOutput" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Dragoon"
+label_settings = ExtResource("2_gr1le")
+
+[node name="Color" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Color: "
+label_settings = ExtResource("1_7bjab")
+horizontal_alignment = 2
+
+[node name="ColorOutput" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Purple"
+label_settings = ExtResource("2_gr1le")
+
+[node name="Hunger" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hunger: "
+label_settings = ExtResource("1_7bjab")
+horizontal_alignment = 2
+
+[node name="HungerVariable" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "00 / 5"
+label_settings = ExtResource("2_gr1le")
+
+[node name="Happiness" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Happiness: "
+label_settings = ExtResource("1_7bjab")
+horizontal_alignment = 2
+
+[node name="HappinessVariable" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "00 / 5"
+label_settings = ExtResource("2_gr1le")

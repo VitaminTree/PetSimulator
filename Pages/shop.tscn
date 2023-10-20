@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo331j1sqy47u"]
+
+[ext_resource type="Texture2D" uid="uid://7ft6wrfx47c6" path="res://Images/Main.png" id="2_vlh31"]
+[ext_resource type="PackedScene" uid="uid://d1ntd3ohnsxkt" path="res://Managers/ShopFramework.tscn" id="3_kr2r4"]
+[ext_resource type="Resource" uid="uid://darrbmq2lo5ut" path="res://Items/fish.tres" id="4_8nlqn"]
+[ext_resource type="PackedScene" uid="uid://btek7cvhlsdhm" path="res://navigationbuttons.tscn" id="4_iwmg8"]
+[ext_resource type="Resource" uid="uid://cfvqvxl6cx75f" path="res://Items/apple.tres" id="4_wwh2x"]
+[ext_resource type="Resource" uid="uid://bfjei5pwo2pyo" path="res://Items/dumbbell.tres" id="5_0d2ra"]
+[ext_resource type="PackedScene" uid="uid://daohom5mahgo3" path="res://Inventory/Backpack.tscn" id="7_jmj3g"]
+
+[node name="Shop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vlh31")
+centered = false
+
+[node name="ShopUI" parent="." instance=ExtResource("3_kr2r4")]
+offset_left = 688.0
+offset_top = 148.0
+offset_right = 1296.0
+offset_bottom = 692.0
+merchandise = Array[Resource("res://Inventory/Item.gd")]([ExtResource("4_wwh2x"), ExtResource("4_8nlqn"), ExtResource("5_0d2ra")])
+description = Array[String](["Pets love to eat apples", "Pets dislike fish, but they're very filling", "Work up an appetite"])
+price = Array[int]([50, 125, 200])
+
+[node name="NavButtons" parent="." instance=ExtResource("4_iwmg8")]
+
+[node name="Backpack" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="Backpack" instance=ExtResource("7_jmj3g")]

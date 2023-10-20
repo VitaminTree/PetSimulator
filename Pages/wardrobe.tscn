@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkvg513ndoycq"]
+
+[ext_resource type="Texture2D" uid="uid://7ft6wrfx47c6" path="res://Images/Main.png" id="1_1yo0m"]
+[ext_resource type="PackedScene" uid="uid://daohom5mahgo3" path="res://Inventory/Backpack.tscn" id="2_vis6o"]
+[ext_resource type="Texture2D" uid="uid://cgqchr7pjlx8d" path="res://Images/Shitty Dragoon.png" id="3_tdbut"]
+[ext_resource type="LabelSettings" uid="uid://brk3b518ew3w8" path="res://Themes/Font.tres" id="4_qjxko"]
+[ext_resource type="PackedScene" uid="uid://btek7cvhlsdhm" path="res://navigationbuttons.tscn" id="5_a3od4"]
+
+[node name="Wardrobe" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1yo0m")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1000, 424)
+texture = ExtResource("3_tdbut")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 640.0
+offset_top = 648.0
+offset_right = 1344.0
+offset_bottom = 696.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 693.0
+offset_bottom = 48.0
+text = "Pet customization isn't implemented yet"
+label_settings = ExtResource("4_qjxko")
+horizontal_alignment = 1
+
+[node name="NavigationButtons" parent="." instance=ExtResource("5_a3od4")]
+
+[node name="Backpack" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="Backpack" instance=ExtResource("2_vis6o")]

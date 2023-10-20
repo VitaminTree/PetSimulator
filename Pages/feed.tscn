@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0ehkd7mhlhb8"]
+
+[ext_resource type="Texture2D" uid="uid://7ft6wrfx47c6" path="res://Images/Main.png" id="1_gn3c7"]
+[ext_resource type="PackedScene" uid="uid://btek7cvhlsdhm" path="res://navigationbuttons.tscn" id="2_nbwle"]
+[ext_resource type="PackedScene" uid="uid://daohom5mahgo3" path="res://Inventory/Backpack.tscn" id="3_g0di7"]
+[ext_resource type="PackedScene" uid="uid://ovj1us8c77e2" path="res://Stats.tscn" id="4_cxj4y"]
+
+[node name="FeedScene" type="Node2D" groups=["ConsumablesOK"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gn3c7")
+centered = false
+
+[node name="NavigationButtons" parent="." instance=ExtResource("2_nbwle")]
+
+[node name="Backpack" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="Backpack" instance=ExtResource("3_g0di7")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_cxj4y")]
+offset_left = 664.0
+offset_top = 264.0
+offset_right = 728.0
+offset_bottom = 328.0

@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cc056pssvo0od"]
+
+[sub_resource type="SystemFont" id="SystemFont_xxh4y"]
+font_names = PackedStringArray("Malgun Gothic")
+
+[resource]
+font = SubResource("SystemFont_xxh4y")
+font_size = 24
+font_color = Color(0, 0, 0, 1)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bfjei5pwo2pyo"]
+
+[ext_resource type="Script" path="res://Inventory/Item.gd" id="1_qs24e"]
+[ext_resource type="Texture2D" uid="uid://6ldplyceq2j8" path="res://Images/1754959.png" id="2_of2m1"]
+
+[resource]
+script = ExtResource("1_qs24e")
+name = "Dumbbell"
+stackable = true
+max_stack_size = 2
+texture = ExtResource("2_of2m1")
+type = 1
+modifier = 1
+power = Array[int]([1, 0])

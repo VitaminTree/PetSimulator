@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://fqdbfdd4bxww"]
+
+[ext_resource type="Texture2D" uid="uid://7ft6wrfx47c6" path="res://Images/Main.png" id="2_2x548"]
+[ext_resource type="Theme" uid="uid://bg52urxrgpuou" path="res://Themes/Grass.tres" id="2_i8532"]
+[ext_resource type="PackedScene" uid="uid://btek7cvhlsdhm" path="res://navigationbuttons.tscn" id="5_vxaw0"]
+[ext_resource type="PackedScene" uid="uid://daohom5mahgo3" path="res://Inventory/Backpack.tscn" id="7_ied01"]
+[ext_resource type="Script" path="res://Managers/DEMO_AddRemoveItems.gd" id="10_dv66h"]
+
+[sub_resource type="Theme" id="Theme_xk0f5"]
+default_font_size = 32
+
+[node name="Main" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+texture = ExtResource("2_2x548")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="DEMO_MoneyButtons" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="DEMO_MoneyButtons"]
+offset_left = 706.0
+offset_top = 496.0
+offset_right = 1265.0
+offset_bottom = 598.0
+theme = ExtResource("2_i8532")
+script = ExtResource("10_dv66h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DEMO_MoneyButtons/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_i8532")
+
+[node name="MoneyAdd" type="Button" parent="DEMO_MoneyButtons/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_xk0f5")
+text = "Add Money (500)"
+
+[node name="MoneyRemove" type="Button" parent="DEMO_MoneyButtons/MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "remove money (100)"
+
+[node name="NavButtons" parent="." instance=ExtResource("5_vxaw0")]
+
+[node name="Backpack" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="Backpack" instance=ExtResource("7_ied01")]
+
+[connection signal="pressed" from="DEMO_MoneyButtons/MarginContainer/HBoxContainer/MoneyAdd" to="DEMO_MoneyButtons/MarginContainer" method="_on_money_add_pressed"]
+[connection signal="pressed" from="DEMO_MoneyButtons/MarginContainer/HBoxContainer/MoneyRemove" to="DEMO_MoneyButtons/MarginContainer" method="_on_money_remove_pressed"]

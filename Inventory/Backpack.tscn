@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://daohom5mahgo3"]
+
+[ext_resource type="Script" path="res://Inventory/InventoryGUI.gd" id="1_ngs7v"]
+[ext_resource type="PackedScene" uid="uid://ds15uhgfo0r4e" path="res://Inventory/InventorySlot.tscn" id="2_4320x"]
+[ext_resource type="Texture2D" uid="uid://c3w7nijwllnll" path="res://Images/backpack-50-129941.png" id="3_6pcbr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1308.0
+offset_top = 159.0
+offset_right = 1833.0
+offset_bottom = 684.0
+size_flags_horizontal = 3
+script = ExtResource("1_ngs7v")
+
+[node name="Inventroy" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 525.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventroy"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GridContainer" type="GridContainer" parent="Inventroy/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 4
+
+[node name="Box" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box2" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box3" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box4" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box5" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box6" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box7" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box8" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box9" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box10" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box11" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box12" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box13" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box14" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="Box15" parent="Inventroy/MarginContainer/GridContainer" instance=ExtResource("2_4320x")]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 272.0
+offset_top = 576.0
+offset_right = 528.0
+offset_bottom = 832.0
+texture_normal = ExtResource("3_6pcbr")
+stretch_mode = 3
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

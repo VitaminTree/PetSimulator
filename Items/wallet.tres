@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bnmcdulkqgq87"]
+
+[ext_resource type="Script" path="res://Inventory/Item.gd" id="1_w44lm"]
+[ext_resource type="Texture2D" uid="uid://bk1fypk3ubacr" path="res://Images/120px-1,000_Bells_NH_Inv_Icon.png" id="2_lkyhd"]
+
+[resource]
+script = ExtResource("1_w44lm")
+name = "Money"
+stackable = true
+max_stack_size = 1000000
+type = 0
+texture = ExtResource("2_lkyhd")

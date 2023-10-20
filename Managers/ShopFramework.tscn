@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ntd3ohnsxkt"]
+
+[ext_resource type="Script" path="res://Managers/ShopFramework.gd" id="1_m7thg"]
+[ext_resource type="Texture2D" uid="uid://ccye1g6ushgy8" path="res://Images/icon.svg" id="2_3umyv"]
+[ext_resource type="LabelSettings" uid="uid://brk3b518ew3w8" path="res://Themes/Font.tres" id="3_03c2t"]
+
+[node name="ShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 608.0
+offset_bottom = 544.0
+script = ExtResource("1_m7thg")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 608.0
+offset_bottom = 544.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 100.0
+offset_right = 578.0
+offset_bottom = 238.0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Next" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "<"
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3umyv")
+expand_mode = 3
+
+[node name="Previous" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = ">"
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+offset_left = 234.0
+offset_top = 32.0
+offset_right = 374.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 48
+text = "Name"
+label_settings = ExtResource("3_03c2t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 1
+offset_left = 34.0
+offset_top = 240.0
+offset_right = 578.0
+offset_bottom = 376.0
+theme_override_font_sizes/font_size = 48
+text = "All items cost 250 Money. 
+Yes, even the Money item."
+label_settings = ExtResource("3_03c2t")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="."]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 368.0
+offset_right = 450.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 40
+text = "Cost: 10000"
+label_settings = ExtResource("3_03c2t")
+horizontal_alignment = 1
+
+[node name="Buy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 432.0
+offset_right = 418.0
+offset_bottom = 507.0
+theme_override_font_sizes/font_size = 48
+text = "Buy"
+
+[connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]

@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bg52urxrgpuou"]
+
+[ext_resource type="Texture2D" uid="uid://10iqo0xjbx31" path="res://Images/Text Box - Grass.png" id="1_byi7y"]
+
+[sub_resource type="FontFile" id="FontFile_oqlie"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8st2n"]
+texture = ExtResource("1_byi7y")
+texture_margin_top = 1.0
+texture_margin_bottom = 1.0
+
+[resource]
+Button/fonts/font = SubResource("FontFile_oqlie")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_8st2n")
