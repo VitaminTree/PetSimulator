@@ -1,6 +1,7 @@
 extends Node
 
 var player : CharacterBody2D
+var isBackpackHidden : bool = true
 
 func _process(_delta):
 	if not player:

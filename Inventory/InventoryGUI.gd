@@ -5,7 +5,7 @@ const MINIMUM_SLOTS_IN_INVENTORY : int = 4
 var template = preload("res://Inventory/InventorySlot.tscn")
 @onready var grid = $Inventroy/MarginContainer/GridContainer
 @onready var container : PanelContainer = $Inventroy
-var isHidden : bool
+
 
 func _ready():
 	var inv = GameManager.player.inventory
@@ -13,11 +13,15 @@ func _ready():
 	_on_player_inventory_changed(inv)
 	
 	Events.connect("slot_clicked", _on_inventory_slot_clicked)
-	isHidden = true
+	
+	if GameManager.isBackpackHidden:
+		container.hide()
+	else:
+		container.show()
 
 
 func _on_inventory_slot_clicked(index: int):
-	var menu = load("res://use_menu.tscn")
+	var menu = load("res://Inventory/use_menu.tscn")
 	var menu_node = menu.instantiate()
 	grid.add_child(menu_node)
 	# Set parameters of new Menu
@@ -54,8 +58,8 @@ func _on_player_inventory_changed(inventory):
 
 
 func _on_texture_button_pressed() -> void:
-	if isHidden:
+	if GameManager.isBackpackHidden:
 		container.show()
 	else:
 		container.hide()
-	isHidden = !isHidden
+	GameManager.isBackpackHidden = !GameManager.isBackpackHidden
