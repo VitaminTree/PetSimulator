@@ -127,6 +127,24 @@ func remove_item(item_name, quantity : int = 1):
 	emit_signal("inventory_changed", self)
 
 
+func remove_at_index(index: int, amount: int = 1) -> bool:
+	if amount <= 0:
+		print("Can't remove a non-positive amount of objects")
+		return false
+	
+	var size = _items.size()
+	if index < 0 or index >= size:
+		print("Attempting to remove item from an invalid index")
+		return false
+	
+	# Design choice: When given an amount to remove greater than the amount currently on hand,
+	# should the function refuse to remove any amout, or remove all available?
+	_items[index].quantity -= amount
+	if _items[index].quantity <= 0:
+		_items.remove_at(index)
+	emit_signal("inventory_changed", self)
+	return true
+
 
 # TODO:
 # Searching the entire array would be costly if this needs to handle a very large amount of items

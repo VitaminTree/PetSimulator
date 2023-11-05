@@ -27,11 +27,10 @@ func _input(event: InputEvent) -> void:
 func _on_use_button_pressed() -> void:
 	var item = GameManager.player.inventory.get_an_item(index).item_reference
 	Events.emit_signal("modify_stat", item)
-	GameManager.player.inventory.remove_item(item.name)
+	GameManager.player.inventory.remove_at_index(index)
 
 func _on_sell_button_pressed() -> void:
-	var item = GameManager.player.inventory.get_an_item(index)
-	GameManager.player.inventory.remove_item(item.item_reference.name, 1)
+	GameManager.player.inventory.remove_at_index(index)
 	GameManager.player.inventory.add_item("Money", 100)
 
 
