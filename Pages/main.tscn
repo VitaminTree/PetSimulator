@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://fqdbfdd4bxww"]
+[gd_scene load_steps=8 format=3 uid="uid://fqdbfdd4bxww"]
 
 [ext_resource type="Texture2D" uid="uid://7ft6wrfx47c6" path="res://Images/Main.png" id="2_2x548"]
 [ext_resource type="Theme" uid="uid://bg52urxrgpuou" path="res://Themes/Grass.tres" id="2_i8532"]
 [ext_resource type="PackedScene" uid="uid://btek7cvhlsdhm" path="res://navigationbuttons.tscn" id="5_vxaw0"]
+[ext_resource type="Script" path="res://Pages/playGame.gd" id="6_oast6"]
 [ext_resource type="PackedScene" uid="uid://daohom5mahgo3" path="res://Inventory/Backpack.tscn" id="7_ied01"]
 [ext_resource type="Script" path="res://Managers/DEMO_AddRemoveItems.gd" id="10_dv66h"]
 
@@ -31,17 +32,17 @@ layout_mode = 2
 theme = ExtResource("2_i8532")
 
 [node name="MoneyAdd" type="Button" parent="DEMO_MoneyButtons/MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_xk0f5")
 text = "Add Money (500)"
 
 [node name="MoneyRemove" type="Button" parent="DEMO_MoneyButtons/MarginContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "remove money (100)"
+text = "remove money (500)"
 
 [node name="NavButtons" parent="." instance=ExtResource("5_vxaw0")]
 
@@ -49,5 +50,15 @@ text = "remove money (100)"
 
 [node name="Control" parent="Backpack" instance=ExtResource("7_ied01")]
 
+[node name="Button" type="Button" parent="."]
+offset_left = 872.0
+offset_top = 376.0
+offset_right = 1121.0
+offset_bottom = 429.0
+theme_override_font_sizes/font_size = 32
+text = "Play Tic Tac Toe"
+script = ExtResource("6_oast6")
+
 [connection signal="pressed" from="DEMO_MoneyButtons/MarginContainer/HBoxContainer/MoneyAdd" to="DEMO_MoneyButtons/MarginContainer" method="_on_money_add_pressed"]
 [connection signal="pressed" from="DEMO_MoneyButtons/MarginContainer/HBoxContainer/MoneyRemove" to="DEMO_MoneyButtons/MarginContainer" method="_on_money_remove_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
